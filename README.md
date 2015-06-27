@@ -4,6 +4,8 @@ Swift Sprite Kit Label Node with multiline support
 This class is a simplified attempt at remedying the common problem of needing a multiline label without fussing with multiple label nodes.
 This implementation tries to be as clean and simple as possible, while still maintaining the functionality of the SKLabelNode, such as support for alignment modes.
 
+The project files use the Game boilerplate to showcase multiline label behavior.
+
 ## Useage
 1. Copy the SKLabelNodeMultiline.swift file into your project.
 2. Create a SKLabelNodeMultine object.
