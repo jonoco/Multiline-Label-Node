@@ -38,9 +38,7 @@ class SKLabelNodeMultiline: SKNode {
 			label.fontSize = fontSize
 			label.fontColor = fontColor
 			label.text = lines[i]
-			label.position = CGPoint(
-				x: 0,
-				y: (CGFloat(i) * -label.fontSize))
+			label.position = CGPoint(x: 0, y: (CGFloat(i) * -label.fontSize))
 			addChild(label)
 		}
 	}
@@ -52,13 +50,12 @@ class SKLabelNodeMultiline: SKNode {
 	func update() {
 		for var i = 0 ; i < children.count ; i++ {
 			let label = children[i] as! SKLabelNode
-			label.position.y /= label.fontSize
 			label.fontName = fontName
 			label.fontSize = fontSize
 			label.fontColor = fontColor
 			label.verticalAlignmentMode = verticalAlignmentMode
 			label.horizontalAlignmentMode = horizontalAlignmentMode
-			label.position.y *= fontSize
+			label.position = CGPoint(x: 0, y: (CGFloat(i) * -fontSize))
 			label.position.y -= CGFloat(i) * verticalLineSpacing
 
 		}
