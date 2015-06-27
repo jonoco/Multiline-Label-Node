@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		BBDE94C11B3E05AB00EDF526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE94C01B3E05AB00EDF526 /* AppDelegate.swift */; };
-		BBDE94C31B3E05AB00EDF526 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BBDE94C21B3E05AB00EDF526 /* GameScene.sks */; };
 		BBDE94C51B3E05AB00EDF526 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE94C41B3E05AB00EDF526 /* GameScene.swift */; };
 		BBDE94C71B3E05AB00EDF526 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE94C61B3E05AB00EDF526 /* GameViewController.swift */; };
 		BBDE94CA1B3E05AB00EDF526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBDE94C81B3E05AB00EDF526 /* Main.storyboard */; };
 		BBDE94CC1B3E05AB00EDF526 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBDE94CB1B3E05AB00EDF526 /* Images.xcassets */; };
 		BBDE94CF1B3E05AB00EDF526 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDE94CD1B3E05AB00EDF526 /* LaunchScreen.xib */; };
 		BBDE94DB1B3E05AB00EDF526 /* Multiline_Label_NodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE94DA1B3E05AB00EDF526 /* Multiline_Label_NodeTests.swift */; };
+		BBDE94E51B3E05F400EDF526 /* SKLabelNodeMultiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE94E41B3E05F400EDF526 /* SKLabelNodeMultiline.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +31,6 @@
 		BBDE94BB1B3E05AB00EDF526 /* Multiline Label Node.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiline Label Node.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDE94BF1B3E05AB00EDF526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBDE94C01B3E05AB00EDF526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBDE94C21B3E05AB00EDF526 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		BBDE94C41B3E05AB00EDF526 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		BBDE94C61B3E05AB00EDF526 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		BBDE94C91B3E05AB00EDF526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		BBDE94D41B3E05AB00EDF526 /* Multiline Label NodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multiline Label NodeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDE94D91B3E05AB00EDF526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBDE94DA1B3E05AB00EDF526 /* Multiline_Label_NodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiline_Label_NodeTests.swift; sourceTree = "<group>"; };
+		BBDE94E41B3E05F400EDF526 /* SKLabelNodeMultiline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLabelNodeMultiline.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +82,13 @@
 			isa = PBXGroup;
 			children = (
 				BBDE94C01B3E05AB00EDF526 /* AppDelegate.swift */,
-				BBDE94C21B3E05AB00EDF526 /* GameScene.sks */,
 				BBDE94C41B3E05AB00EDF526 /* GameScene.swift */,
 				BBDE94C61B3E05AB00EDF526 /* GameViewController.swift */,
 				BBDE94C81B3E05AB00EDF526 /* Main.storyboard */,
 				BBDE94CB1B3E05AB00EDF526 /* Images.xcassets */,
 				BBDE94CD1B3E05AB00EDF526 /* LaunchScreen.xib */,
 				BBDE94BE1B3E05AB00EDF526 /* Supporting Files */,
+				BBDE94E41B3E05F400EDF526 /* SKLabelNodeMultiline.swift */,
 			);
 			path = "Multiline Label Node";
 			sourceTree = "<group>";
@@ -200,7 +200,6 @@
 			files = (
 				BBDE94CF1B3E05AB00EDF526 /* LaunchScreen.xib in Resources */,
 				BBDE94CC1B3E05AB00EDF526 /* Images.xcassets in Resources */,
-				BBDE94C31B3E05AB00EDF526 /* GameScene.sks in Resources */,
 				BBDE94CA1B3E05AB00EDF526 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBDE94E51B3E05F400EDF526 /* SKLabelNodeMultiline.swift in Sources */,
 				BBDE94C51B3E05AB00EDF526 /* GameScene.swift in Sources */,
 				BBDE94C71B3E05AB00EDF526 /* GameViewController.swift in Sources */,
 				BBDE94C11B3E05AB00EDF526 /* AppDelegate.swift in Sources */,

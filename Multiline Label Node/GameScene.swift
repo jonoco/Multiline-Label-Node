@@ -25,17 +25,12 @@ class GameScene: SKScene {
         for touch in (touches as! Set<UITouch>) {
             let location = touch.locationInNode(self)
             
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
+            let string = SKLabelNodeMultiline(text: "Hello world \n Hello worlddddddd \n Hello world \n Hello world \n Hello worlddddd \n Hello world \n ", predicate: "\n")
+						string.position = location
+						string.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right
+						string.fontSize = 22.0
+					
+						self.addChild(string)
         }
     }
    
