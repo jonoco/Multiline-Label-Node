@@ -15,7 +15,7 @@ import SpriteKit
 class SKLabelNodeMultiline: SKNode {
 	
 	var fontSize: CGFloat = 52.0 {didSet {update()}}
-	var color: SKColor = SKColor.grayColor() {didSet {update()}}
+	var fontColor: SKColor = UIColor.grayColor() {didSet {update()}}
 	var fontName = "AvenirNext-Regular" {didSet {update()}}
 	var verticalAlignmentMode = SKLabelVerticalAlignmentMode.Bottom {didSet {update()}}
 	var horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center {didSet {update()}}
@@ -32,7 +32,7 @@ class SKLabelNodeMultiline: SKNode {
 		for var i = 0 ; i < lines.count ; i++ {
 			let label = SKLabelNode(fontNamed: fontName)
 			label.fontSize = fontSize
-			label.color = color
+			label.fontColor = fontColor
 			label.text = lines[i]
 			label.position = CGPoint(
 				x: 0,
@@ -51,7 +51,7 @@ class SKLabelNodeMultiline: SKNode {
 			label.position.y /= label.fontSize
 			label.fontName = fontName
 			label.fontSize = fontSize
-			label.color = color
+			label.fontColor = fontColor
 			label.verticalAlignmentMode = verticalAlignmentMode
 			label.horizontalAlignmentMode = horizontalAlignmentMode
 			label.position.y *= fontSize

@@ -9,26 +9,23 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        
-        self.addChild(myLabel)
-    }
-    
+	
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
         for touch in (touches as! Set<UITouch>) {
             let location = touch.locationInNode(self)
-            
-            let string = SKLabelNodeMultiline(text: "Hello world \n Hello worlddddddd \n Hello world \n Hello world \n Hello worlddddd \n Hello world \n ", predicate: "\n")
+					
+						let text = "Hello world \n Helloooooo world \n Helloo world \n Hellooooooooo world \n Hello worlddddd \n Hello world \n "
+						let predicate = "\n"
+					
+            let string = SKLabelNodeMultiline(text: text, predicate: predicate)
 						string.position = location
 						string.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right
 						string.fontSize = 22.0
+						string.fontColor = UIColor.greenColor()
+						string.fontName = "Helvetica"
+						string.verticalLineSpacing = 2.0
 					
 						self.addChild(string)
         }
