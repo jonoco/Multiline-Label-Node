@@ -25,7 +25,7 @@ class GameScene: SKScene {
 						string.fontSize = 22.0
 						string.fontColor = UIColor.greenColor()
 						string.fontName = "Helvetica"
-						string.verticalLineSpacing = 2.0
+						string.verticalLineSpacing = 22.0
 					
 						self.addChild(string)
         }

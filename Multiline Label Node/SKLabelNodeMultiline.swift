@@ -19,7 +19,11 @@ class SKLabelNodeMultiline: SKNode {
 	var fontName = "AvenirNext-Regular" {didSet {update()}}
 	var verticalAlignmentMode = SKLabelVerticalAlignmentMode.Bottom {didSet {update()}}
 	var horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center {didSet {update()}}
-	var verticalLineSpacing: CGFloat = 1.0
+	
+	/**
+		Space between lines of text in pixels. Default 0.0.
+	*/
+	var verticalLineSpacing: CGFloat = 0.0 {didSet {update()}}
 	
 	/**
 		Choose a predicate for line breaks e.g., "/n"
@@ -36,7 +40,7 @@ class SKLabelNodeMultiline: SKNode {
 			label.text = lines[i]
 			label.position = CGPoint(
 				x: 0,
-				y: (CGFloat(i) * -label.fontSize * verticalLineSpacing))
+				y: (CGFloat(i) * -label.fontSize))
 			addChild(label)
 		}
 	}
@@ -46,8 +50,8 @@ class SKLabelNodeMultiline: SKNode {
 	}
 	
 	func update() {
-		for label in children {
-			let label = label as! SKLabelNode
+		for var i = 0 ; i < children.count ; i++ {
+			let label = children[i] as! SKLabelNode
 			label.position.y /= label.fontSize
 			label.fontName = fontName
 			label.fontSize = fontSize
@@ -55,8 +59,8 @@ class SKLabelNodeMultiline: SKNode {
 			label.verticalAlignmentMode = verticalAlignmentMode
 			label.horizontalAlignmentMode = horizontalAlignmentMode
 			label.position.y *= fontSize
-			
+			label.position.y -= CGFloat(i) * verticalLineSpacing
+
 		}
 	}
-	
 }
