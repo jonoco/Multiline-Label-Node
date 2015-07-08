@@ -8,7 +8,7 @@ The project files use the Game boilerplate to showcase multiline label behavior.
 
 ## Usage
 1. Copy the SKLabelNodeMultiline.swift file into your project.
-2. Create a SKLabelNodeMultine object.
+2. Create a SKLabelNodeMultiline object.
 3. Declare the object with a string and a predicate for line breaks within the string, such as "\n".
 
 ## License
