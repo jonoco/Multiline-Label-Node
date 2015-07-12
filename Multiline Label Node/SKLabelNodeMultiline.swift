@@ -1,4 +1,3 @@
-//
 //  SKLabelNodeMultiline.swift
 //  Multiline Label Node
 //
@@ -9,7 +8,7 @@
 import SpriteKit
 
 /**
-	Generates multiple SKLabelNodes for multiline labels
+Generates multiple SKLabelNodes for multiline labels
 */
 
 class SKLabelNodeMultiline: SKNode {
@@ -19,18 +18,37 @@ class SKLabelNodeMultiline: SKNode {
 	var fontName = "AvenirNext-Regular" {didSet {update()}}
 	var verticalAlignmentMode = SKLabelVerticalAlignmentMode.Bottom {didSet {update()}}
 	var horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center {didSet {update()}}
-	
-	/**
-		Space between lines of text in pixels. Default 0.0.
-	*/
+	var text: String {didSet {update()}}
+	var predicate: String {didSet {update()}}
+
+	///Space between lines of text in pixels. Default 0.0.
 	var verticalLineSpacing: CGFloat = 0.0 {didSet {update()}}
 	
 	/**
-		Choose a predicate for line breaks e.g., "/n"
+	Divides a string into lines of text with a \n predicate.
+	*/
+	convenience init(text: String) {
+		self.init(text: text, predicate: "\n")
+	}
+	
+	/**
+	Choose a predicate for line breaks e.g., "/n"
 	*/
 	init(text: String, predicate: String) {
+		self.text = text
+		self.predicate = predicate
 		super.init()
-
+		
+		createLines()
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	func createLines() {
+		removeAllChildren()
+		
 		let lines = text.componentsSeparatedByString(predicate)
 		
 		for var i = 0 ; i < lines.count ; i++ {
@@ -43,11 +61,9 @@ class SKLabelNodeMultiline: SKNode {
 		}
 	}
 	
-	required init?(coder aDecoder: NSCoder) {
-	    fatalError("init(coder:) has not been implemented")
-	}
-	
 	func update() {
+		createLines()
+		
 		for var i = 0 ; i < children.count ; i++ {
 			let label = children[i] as! SKLabelNode
 			label.fontName = fontName
@@ -57,7 +73,7 @@ class SKLabelNodeMultiline: SKNode {
 			label.horizontalAlignmentMode = horizontalAlignmentMode
 			label.position = CGPoint(x: 0, y: (CGFloat(i) * -fontSize))
 			label.position.y -= CGFloat(i) * verticalLineSpacing
-
+			
 		}
 	}
 }
