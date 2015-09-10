@@ -1,4 +1,7 @@
 # Multiline-Label-Node
+
+### This repo is no longer supported; Use [Swift Accessories](https://github.com/jonoco/Swift-Accessories) for updated versions.
+
 Swift Sprite Kit Label Node with multiline support
 
 This class is a simplified attempt at remedying the common problem of needing a multiline label without fussing with multiple label nodes.
